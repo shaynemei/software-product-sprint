@@ -1,4 +1,5 @@
 #content {
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
   width: 650px;
@@ -6,4 +7,15 @@
 
 #greeting-container {
   margin-top: 20px;
+}
+
+.profile {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+}
+
+ul {
+  display: inline-block;
+  text-align: left;
 }
