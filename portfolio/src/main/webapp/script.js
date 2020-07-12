@@ -17,7 +17,7 @@
  */
 function addRandomGreeting() {
   const greetings =
-      ['Do not pray for an easy life. Pray for the strength to endure a difficult one.', '以無法為有法 以無限為有限。', 'Qui n’avance pas, recule.', 'Fallaces sunt rerim species'];
+      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];

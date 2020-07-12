@@ -1,6 +1,6 @@
 # Google Software Product Sprint
 
-This repo contains Shayne's portfolio for Google SPS 2020.
+This repo contains the projects you'll work on throughout SPS.
 
 To get started:
 
