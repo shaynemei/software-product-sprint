@@ -34,3 +34,18 @@ async function getRandomQuote() {
   document.getElementById('quote-container').innerText = quote;
 }
 
+function getComments() {
+  fetch('/data').then(response => response.json()).then((comments) => {
+    const commentEl = document.getElementById('comments');
+    comments.history.forEach((line) => {
+      commentEl.appendChild(createListElement(line));
+    });
+  });
+}
+
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+
