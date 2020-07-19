@@ -33,3 +33,4 @@ async function getRandomQuote() {
   const quote = await response.text();
   document.getElementById('quote-container').innerText = quote;
 }
+
