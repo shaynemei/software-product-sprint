@@ -35,9 +35,9 @@ async function getRandomQuote() {
 }
 
 function getComments() {
-  fetch('/data').then(response => response.json()).then((comments) => {
+  fetch('/data').then(response => response.json()).then((history) => {
     const commentEl = document.getElementById('comments');
-    comments.history.forEach((line) => {
+    history.forEach((line) => {
       commentEl.appendChild(createListElement(line));
     });
   });
