@@ -14,13 +14,13 @@
 // comment to fix PR not showing.
 
 /**
- * Adds a random greeting to the page.
+ * Adds a random quote to the page.
  */
-function addRandomGreeting() {
+function addRandomQuote() {
   const greetings =
       ['Do not pray for an easy life. Pray for the strength to endure a difficult one.', '以無法為有法 以無限為有限。', 'Qui n’avance pas, recule.', 'Fallaces sunt rerim species'];
 
-  // Pick a random greeting.
+  // Pick a random quote.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
 
   // Add it to the page.
@@ -34,8 +34,9 @@ async function getRandomQuote() {
   document.getElementById('quote-container').innerText = quote;
 }
 
+/** Load comment from DataStore and add to page as list items. */
 function getComments() {
-  fetch('/data').then(response => response.json()).then((history) => {
+  fetch('/load_comment').then(response => response.json()).then((history) => {
     const commentEl = document.getElementById('comments');
     history.forEach((comment) => {
       commentEl.appendChild(createListElement(comment.text));
@@ -43,6 +44,7 @@ function getComments() {
   });
 }
 
+/** Helper function to add list items to page. */
 function createListElement(text) {
   const liElement = document.createElement('li');
   liElement.innerText = text;
