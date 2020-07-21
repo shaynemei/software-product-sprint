@@ -20,15 +20,15 @@
       <a href=https://www.linkedin.com/in/shayne-mei/><img src="images/linkedin_icon.png" alt="linkedin icon"></a>
       <a href=https://github.com/shaynemei><img src="images/github_icon.png" alt="github icon"></a>
       <hr>
-      <button onclick="addRandomQuote()">Change your life with a quote!</button>
-      <div id="greeting-container"></div>
-      <form action="/store_comment" method="POST">
+      <button onclick="getRandomQuote()">Change your life with a quote!</button>
+      <div id="quote-container"></div>
+      <form action="/comment" method="POST">
         <p>Leave comment:</p>
         <input type="string" name="text-input">
         <br/><br/>
         <input type="submit" />
       </form>
-      <ul id="comments"></ul>
+      <ul id="comment-container"></ul>
     </div>
   </body>
 </html>

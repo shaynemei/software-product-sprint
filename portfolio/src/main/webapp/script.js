@@ -13,31 +13,17 @@
 // limitations under the License.
 // comment to fix PR not showing.
 
-/**
- * Adds a random quote to the page.
- */
-function addRandomQuote() {
-  const greetings =
-      ['Do not pray for an easy life. Pray for the strength to endure a difficult one.', '以無法為有法 以無限為有限。', 'Qui n’avance pas, recule.', 'Fallaces sunt rerim species'];
-
-  // Pick a random quote.
-  const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-  // Add it to the page.
-  const greetingContainer = document.getElementById('greeting-container');
-  greetingContainer.innerText = greeting;
-}
-
+/** Load random quote from DataStore and add to page. */
 async function getRandomQuote() {
-  const response = await fetch('/data');
+  const response = await fetch('/quote');
   const quote = await response.text();
   document.getElementById('quote-container').innerText = quote;
 }
 
 /** Load comment from DataStore and add to page as list items. */
 function getComments() {
-  fetch('/load_comment').then(response => response.json()).then((history) => {
-    const commentEl = document.getElementById('comments');
+  fetch('/comment').then(response => response.json()).then((history) => {
+    const commentEl = document.getElementById('comment-container');
     history.forEach((comment) => {
       commentEl.appendChild(createListElement(comment.text));
     });
