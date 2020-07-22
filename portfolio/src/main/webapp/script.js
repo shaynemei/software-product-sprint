@@ -37,3 +37,6 @@ function createListElement(text) {
   return liElement;
 }
 
+function logIn() {
+  fetch('/').then(response => response)
+}

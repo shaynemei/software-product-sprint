@@ -31,6 +31,8 @@ import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 
+import org.jsoup.Jsoup;
+
 /** Servlet that handles comments from DataStore */
 @WebServlet("/comment")
 public class CommentServlet extends HttpServlet {
@@ -65,7 +67,7 @@ public class CommentServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Get the input from the form.
-    String text = request.getParameter("text-input");
+    String text = Jsoup.clean(request.getParameter("text-input"), Whitelist.none());
     long timestamp = System.currentTimeMillis();
 
     Entity commentEntity = new Entity("Comment");
