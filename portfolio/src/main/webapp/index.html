@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getComments()">
     <div id="content">
       <h1>Shayne's Portfolio</h1>
       <img src="images/profile.png" alt="profile picture" width="400" height="400" class="profile">
@@ -20,11 +20,15 @@
       <a href=https://www.linkedin.com/in/shayne-mei/><img src="images/linkedin_icon.png" alt="linkedin icon"></a>
       <a href=https://github.com/shaynemei><img src="images/github_icon.png" alt="github icon"></a>
       <hr>
-      <button onclick="addRandomGreeting()">Change your life with a quote!</button>
-      <div id="greeting-container"></div>
-      <hr>
-      <button onclick="getRandomQuote()">Fetch a quote!</button>
+      <button onclick="getRandomQuote()">Change your life with a quote!</button>
       <div id="quote-container"></div>
+      <form action="/comment" method="POST">
+        <p>Leave comment:</p>
+        <input type="string" name="text-input">
+        <br/><br/>
+        <input type="submit" />
+      </form>
+      <ul id="comment-container"></ul>
     </div>
   </body>
 </html>
