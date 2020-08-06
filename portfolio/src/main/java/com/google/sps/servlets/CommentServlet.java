@@ -32,6 +32,7 @@ import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Entity;
 
 import org.jsoup.Jsoup;
+import org.jsoup.safety.Whitelist;
 
 /** Servlet that handles comments from DataStore */
 @WebServlet("/comment")
